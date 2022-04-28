@@ -1,0 +1,267 @@
+/* .attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 100vw;
+    height: 100vh;
+    font-size: 18px;
+    background-color: var(--Almost-White);
+    font-family: 'Epilogue', sans-serif;
+}
+
+:root {
+    --Almost-White: hsl(0, 0%, 98%);
+    --Medium-Gray: hsl(0, 0%, 41%);
+    --Almost-Black: hsl(0, 0%, 8%);
+}
+
+header {
+    padding-top: 1rem;
+    /* display: flex; */
+}
+
+.desktop-menu {
+    display: none;
+}
+
+.open-menu {
+    background-image: url(./images/icon-menu.svg);
+    background-repeat: no-repeat;
+    color: var(--Medium-Gray);
+    height: 5rem;
+    width: 3rem;
+    position: absolute;
+    right: 3%;
+}
+
+.open-menu:hover {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-primary {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.dropdown-btn {
+    border: none;
+    background-color: transparent;
+    color: var(--Medium-Gray);
+}
+
+.dropdown-btn-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav-link {
+    color: var(--Medium-Gray);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.dropdown-icon {
+    background: url(./images/icon-arrow-down.svg)no-repeat;
+    display: inline-block;
+    width: .8rem;
+    height: .5rem;
+}
+
+.dropdown-item {
+    color: var(--Medium-Gray);
+}
+
+.dropdown-content {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    padding: 1rem;
+    gap: .75rem;
+    width: 100%;
+}
+
+.dropdown-item:hover {
+    color: var(--Almost-Black);
+}
+
+.dropdown-btn:hover,
+.nav-link:hover {
+    cursor: pointer;
+    color: var(--Almost-Black);
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+}
+
+
+/*Dropdown Position */
+
+.nav-primary {
+    position: relative;
+}
+
+.dropdown-content.features {
+    position: absolute;
+    width: max-content;
+    left: 15%;
+}
+
+
+/* Link Styling */
+
+.nav-btn-group .register {
+    border: 1px solid var(--Almost-Black);
+    border-radius: 15px;
+    padding: .5rem;
+}
+
+.learn-more {
+    color: var(--Almost-White);
+    background-color: var(--Almost-Black);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+}
+
+.learn-more:hover {
+    background-color: var(--Almost-White);
+    color: var(--Almost-Black);
+    border: 1px solid var(--Almost-Black);
+    font-weight: 700;
+}
+
+
+/*Client Section */
+
+.client-section {
+    margin-top: 4rem;
+}
+
+.client-section ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.client-section li {
+    list-style: none;
+}
+
+.client-section li img {
+    width: 80%;
+}
+
+
+/*Page Layout Mobile */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "." "picture" "." "info" ".";
+}
+
+.image-container {
+    grid-area: picture;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.desktop-image {
+    display: none;
+}
+
+.mobile-image {
+    width: 370px;
+}
+
+p.container-text {
+    margin-top: 1rem;
+    color: var(--Medium-Gray);
+    padding-left: 1rem;
+    text-align: center;
+}
+
+
+/*Page Layout Desktop */
+
+@media screen and (min-width: 800px) {
+    .desktop-menu {
+        display: block;
+    }
+    .mobile-menu {
+        display: none;
+    }
+    header {
+        justify-content: space-evenly;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 10vw 1fr 5vw 1fr 10vw;
+        grid-template-areas: ". info . picture .";
+        align-items: center;
+    }
+    .container-info {
+        grid-area: info;
+        grid-template-rows: 10vh auto auto auto 1fr auto;
+        grid-template-areas: "." "container-title" "container-text" "." "client-section";
+    }
+    .container-title {
+        grid-area: container-title;
+        font-size: 4rem;
+    }
+    p.container-text {
+        grid-area: container-text;
+    }
+    .client-section {
+        grid-area: client-section;
+    }
+    .desktop-image {
+        display: block;
+        width: 25rem;
+    }
+    picture {
+        grid-area: picture;
+    }
+    .mobile-image {
+        display: none;
+    }
+}
