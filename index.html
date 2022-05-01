@@ -2,87 +2,86 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
     <script src="./script.js" defer></script>
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-
 </head>
 
 <body>
-
     <header>
+        <nav>
 
-        <nav class="desktop-nav">
+            <a class="logo" href="#"><img src="./images/logo.svg" alt="snap-logo" /></a>
 
-            <span class="open-menu"></span>
+            <div class="container-menu modal">
 
-            <div class="navbar">
+                <button class="mobile-menu-btn"></button>
+            </div>
+            <div class="navbar mobile">
+                <button class="close-menu-btn"></button>
                 <div class="nav-primary">
-                    <a class="logo" href="#"><img src="./images/logo.svg" alt="snap-logo"></a>
 
-                    <div class="dropdown">
-                        <button class="dropdown-btn">
-                      <span>Features</span>
-                      <span class="dropdown-icon"></span>
-                    </button>
+                    <div class="dropdown-btns">
+                        <div class="dropdown">
+                            <button type="button" class="dropdown-btn" id="featuresBtn">
+                <span>Features</span>
+                <span class="dropdown-icon"></span>
+              </button>
 
-                        <div class="dropdown-content features">
-
-                            <a class="dropdown-item" href="#">
-                                <img src="./images/icon-todo.svg" alt="todo-icon">
-                                <span>Todo</span>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <img src="./images/icon-calendar.svg" alt="calendar-icon">
-                                <span>Calendar</span>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <img src="./images/icon-reminders.svg" alt="reminders-icon">
-                                <span>Reminders</span>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <img src="./images/icon-planning.svg" alt="planning-icon">
-                                <span>Planning</span>
-                            </a>
-
+                            <div class="dropdown-content features">
+                                <a class="dropdown-item" href="#">
+                                    <img src="./images/icon-todo.svg" alt="todo-icon" />
+                                    <p>Todo</p>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <img src="./images/icon-calendar.svg" alt="calendar-icon" />
+                                    <span>Calendar</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <img src="./images/icon-reminders.svg" alt="reminders-icon" />
+                                    <span>Reminders</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <img src="./images/icon-planning.svg" alt="planning-icon" />
+                                    <span>Planning</span>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropdown-btn">
-                      <span>Company</span>
-                      <span class="dropdown-icon"></span>
-                    </button>
+                        <div class="dropdown">
+                            <button class="dropdown-btn" id="companyBtn">
+                <span>Company</span>
+                <span class="dropdown-icon"></span>
+              </button>
 
-                        <div class="dropdown-content company">
-                            <a class="dropdown-item" href="#">History</a>
-                            <a class="dropdown-item" href="#">Our Team</a>
-                            <a class="dropdown-item" href="#">Blog</a>
+                            <div class="dropdown-content company">
+                                <a class="dropdown-item" href="#">History</a>
+                                <a class="dropdown-item" href="#">Our Team</a>
+                                <a class="dropdown-item" href="#">Blog</a>
+                            </div>
                         </div>
                     </div>
                     <a href="#" class="nav-link">Careers</a>
                     <a href="#" class="nav-link">About</a>
                 </div>
-                <div class="nav-btn-group">
+                <div class="nav-group">
                     <a href="#" class="nav-link login">Login</a>
                     <a href="#" class="nav-link register">Register</a>
                 </div>
             </div>
+
         </nav>
-
-
     </header>
 
     <main>
         <div class="container">
             <div class="container-info">
-                <h1 class="container-title">Make remote work</h1>
-                <p class="container-text">Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+                <h1 class="container-title">Make<br> remote work</h1>
+                <p class="container-text">Get your team in sync, no matter your location.<br> Streamline processes, create team rituals, and watch productivity soar.</p>
                 <a href="#" class="learn-more">Learn More</a>
                 <div class="client-section">
                     <ul>
@@ -94,8 +93,9 @@
                 </div>
             </div>
             <picture class="image-container">
-                <img class="mobile-image" src="./images/image-hero-mobile.png" alt="Man with laptop">
-                <img class="desktop-image" src="./images/image-hero-desktop.png" alt="Man with laptop"> </picture>
+                <img class="mobile-image" src="./images/image-hero-mobile.png" alt="Man with laptop" />
+                <img class="desktop-image" src="./images/image-hero-desktop.png" alt="Man with laptop" />
+            </picture>
         </div>
     </main>
 

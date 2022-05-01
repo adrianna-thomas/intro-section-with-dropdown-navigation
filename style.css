@@ -15,7 +15,7 @@
 
 body {
     max-width: 100vw;
-    height: 100vh;
+    max-height: 100vh;
     font-size: 18px;
     background-color: var(--Almost-White);
     font-family: 'Epilogue', sans-serif;
@@ -29,51 +29,70 @@ body {
 
 header {
     padding-top: 1rem;
-    /* display: flex; */
 }
 
-.desktop-menu {
-    display: none;
+ul {
+    list-style: none;
 }
 
-.open-menu {
-    background-image: url(./images/icon-menu.svg);
+.mobile-menu-btn {
+    background: url(./images/icon-menu.svg);
     background-repeat: no-repeat;
-    color: var(--Medium-Gray);
     height: 5rem;
     width: 3rem;
     position: absolute;
     right: 3%;
+    border: none;
+    background-color: transparent;
 }
 
-.open-menu:hover {
+.mobile-menu-btn:hover {
     cursor: pointer;
 }
 
-.dropdown-content {
+.close-menu-button {
+    background: url(./images/icon-close-menu.svg);
+    background-repeat: no-repeat;
+    height: 5rem;
+    width: 3rem;
+    position: relative;
+    top: 0;
+    right: 0;
+    border: none;
+    z-index: 2;
+}
+
+
+/*Navigation */
+
+.navbar {
+    height: 100vh;
+    width: 60vw;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: white;
     display: flex;
     flex-direction: column;
+}
+
+.nav-primary {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 6rem 1rem 2rem 1rem;
 }
 
 a {
     text-decoration: none;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-primary {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-}
-
 .dropdown-btn {
     border: none;
     background-color: transparent;
     color: var(--Medium-Gray);
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .dropdown-btn-text {
@@ -94,17 +113,26 @@ a {
     height: .5rem;
 }
 
-.dropdown-item {
-    color: var(--Medium-Gray);
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    padding: .75rem 1rem;
 }
 
-.dropdown-content {
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 10px;
-    padding: 1rem;
-    gap: .75rem;
-    width: 100%;
+.dropdown-content img {
+    transform: scale(1.1);
+    padding-right: 1rem;
+}
+
+.dropdown-content.features {
+    padding: .75rem 1rem;
+}
+
+.dropdown-item {
+    color: var(--Medium-Gray);
+    padding-block: .75rem;
+    display: flex;
+    align-items: center;
 }
 
 .dropdown-item:hover {
@@ -117,33 +145,28 @@ a {
     color: var(--Almost-Black);
 }
 
-.mobile-nav {
+.nav-group {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    right: 0;
-}
-
-
-/*Dropdown Position */
-
-.nav-primary {
-    position: relative;
-}
-
-.dropdown-content.features {
-    position: absolute;
-    width: max-content;
-    left: 15%;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 
 /* Link Styling */
 
-.nav-btn-group .register {
+.nav-group .login {
+    text-align: center;
+    width: 90%;
+}
+
+.nav-group .register {
     border: 1px solid var(--Almost-Black);
     border-radius: 15px;
-    padding: .5rem;
+    padding-block: .8rem;
+    width: 90%;
+    text-align: center;
 }
 
 .learn-more {
@@ -224,44 +247,132 @@ p.container-text {
 /*Page Layout Desktop */
 
 @media screen and (min-width: 800px) {
-    .desktop-menu {
-        display: block;
-    }
-    .mobile-menu {
+    .mobile-image {
         display: none;
     }
     header {
         justify-content: space-evenly;
+        height: 10vh;
+        padding-left: 2%;
+    }
+    .logo img {
+        padding-top: .4rem;
+        position: fixed;
+    }
+    .navbar {
+        display: inline-flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100vw;
+        height: 5vh;
+        background-color: transparent;
+        margin-top: 1%;
+    }
+    .nav-link .register,
+    .nav-link .login {
+        width: 100%;
+    }
+    .nav-group .register {
+        padding: .75rem;
+        width: 100%;
+    }
+    .nav-primary {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+        position: absolute;
+        margin-left: 10rem;
+        padding: 0;
+    }
+    .nav-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-right: 2rem;
+        gap: 4rem;
+    }
+    /*Dropdown Position */
+    .nav-primary {
+        position: relative;
+        justify-content: center;
+    }
+    .dropdown-btns {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .dropdown-content.features {
+        position: absolute;
+        width: max-content;
+        left: -4rem;
+        top: 2.2rem;
+    }
+    .dropdown-content.company {
+        position: absolute;
+        top: 2.2rem;
+        width: max-content;
+    }
+    .dropdown-content {
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 10px;
+        padding: 1rem;
+        gap: .15rem;
+        width: 100%;
+    }
+    .dropdown-item {
+        padding-block: .25rem;
+    }
+    .mobile-menu-btn {
+        display: none;
     }
     .container {
+        height: 95vh;
         display: grid;
-        grid-template-columns: 10vw 1fr 5vw 1fr 10vw;
+        grid-template-columns: 5vw 1fr 5vw 1fr 5vw;
         grid-template-areas: ". info . picture .";
-        align-items: center;
+        align-items: left;
     }
     .container-info {
         grid-area: info;
-        grid-template-rows: 10vh auto auto auto 1fr auto;
+        grid-template-rows: repeat(5, auto);
         grid-template-areas: "." "container-title" "container-text" "." "client-section";
+        margin-top: 6rem;
     }
     .container-title {
         grid-area: container-title;
-        font-size: 4rem;
+        font-size: 3.75rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        width: 100%;
     }
     p.container-text {
         grid-area: container-text;
+        text-align: left;
+        padding-left: 0;
+        padding-right: 3rem;
+        line-height: 1.5;
+    }
+    a.learn-more {
+        align-self: flex-start;
+        margin-top: 3rem;
     }
     .client-section {
         grid-area: client-section;
+        width: 100%;
+        position: relative;
+        bottom: 2%;
+    }
+    .client-section li img {
+        width: 100%;
     }
     .desktop-image {
         display: block;
-        width: 25rem;
+        width: 24rem;
     }
     picture {
         grid-area: picture;
-    }
-    .mobile-image {
-        display: none;
     }
 }
