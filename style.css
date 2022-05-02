@@ -41,6 +41,7 @@ ul {
     height: 5rem;
     width: 3rem;
     position: absolute;
+    top: 2%;
     right: 3%;
     border: none;
     background-color: transparent;
@@ -50,16 +51,20 @@ ul {
     cursor: pointer;
 }
 
-.close-menu-button {
+.close-menu-btn {
     background: url(./images/icon-close-menu.svg);
     background-repeat: no-repeat;
     height: 5rem;
     width: 3rem;
-    position: relative;
-    top: 0;
+    position: absolute;
+    top: 3%;
     right: 0;
     border: none;
-    z-index: 2;
+    z-index: ;
+}
+
+.close-menu-btn:hover {
+    cursor: pointer;
 }
 
 
@@ -74,6 +79,8 @@ ul {
     background-color: white;
     display: flex;
     flex-direction: column;
+    display: none;
+    z-index: 2;
 }
 
 .nav-primary {
@@ -113,9 +120,11 @@ a {
     height: .5rem;
 }
 
+.dropdown-features {
+    padding-bottom: 1.5rem;
+}
+
 .dropdown-content {
-    display: flex;
-    flex-direction: column;
     padding: .75rem 1rem;
 }
 
@@ -126,6 +135,11 @@ a {
 
 .dropdown-content.features {
     padding: .75rem 1rem;
+    display: none;
+}
+
+.dropdown-content.company {
+    display: none;
 }
 
 .dropdown-item {
@@ -151,6 +165,10 @@ a {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+
+.show {
+    display: block;
 }
 
 
@@ -247,6 +265,21 @@ p.container-text {
 /*Page Layout Desktop */
 
 @media screen and (min-width: 800px) {
+    body {
+        z-index: 3;
+    }
+    #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 3;
+    }
     .mobile-image {
         display: none;
     }
@@ -259,8 +292,11 @@ p.container-text {
         padding-top: .4rem;
         position: fixed;
     }
+    .close-menu-btn {
+        display: none;
+    }
     .navbar {
-        display: inline-flex;
+        display: inline-flex !important;
         justify-content: space-between;
         flex-direction: row;
         width: 100vw;
@@ -294,6 +330,9 @@ p.container-text {
         gap: 4rem;
     }
     /*Dropdown Position */
+    .dropdown-features {
+        padding-bottom: 0;
+    }
     .nav-primary {
         position: relative;
         justify-content: center;
